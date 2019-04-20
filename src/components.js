@@ -14,6 +14,8 @@ const createElement = (tagName, opts = {}) => {
   return element;
 };
 
+module.exports = createElement;
+
 // const render = (Component, target) => {
 //   const child = Component({});
 //   if (child) {

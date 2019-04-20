@@ -1,4 +1,4 @@
-const createElement = require('../../src/lib/createElement');
+const createElement = require('../src/components');
 
 describe('createElement', () => {
   it('is a function', () => {

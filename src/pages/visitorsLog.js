@@ -25,17 +25,11 @@ const loadPhotoDiv = createElement('div', {
 const loadPhotoBtn = document.querySelector('.loadPhotoBtn');
 const registerBtn = createElement('button', { innerText: 'Registrarse', className: 'registerBtn' });
 
-const contentDiv = document.getElementById('root');
-contentDiv.classList.add('flex-column-log');
-contentDiv.innerHTML = visitorsLog().outerHTML + loadPhotoDiv.outerHTML + registerBtn.outerHTML;
-
-const visitRegistry = {
-	visitName : document.querySelector('.visitName').value,
-	visitEmail : document.querySelector('.visitEmail').value,
-	visitCompany : document.querySelector('.visitCompany').value,
-	visitHost : document.querySelector('.visitHost').value,
-	visitPhoto : document.querySelector('.load-img')
+const renderVisitorsScreen = () => {
+	const contentDiv = document.getElementById('root');
+	contentDiv.classList.add('flex-column-log');
+	contentDiv.innerHTML = visitorsLog().outerHTML + loadPhotoDiv.outerHTML + registerBtn.outerHTML;
 }
 
-console.log(visitRegistry);
+
 
