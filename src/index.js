@@ -12,8 +12,29 @@ if (location.hash === '') {
 
 else if (location.hash === '#visitors') {
 	contentDiv.innerHTML = visitorsLog().outerHTML + loadPhotoDiv.outerHTML + registerBtn.outerHTML;
-	const loadPhotoBtn = document.querySelector('.loadPhotoBtn');
+	const video = document.querySelector('.video');
+	const canvas = document.querySelector('.canvas');
+	const context = canvas.getContext('2d');
+	const takePhotoBtn = document.querySelector('.takePhotoBtn');
 	const loadRegistryBtn = document.querySelector('.registerBtn');
+	const photo = document.querySelector ('.load-img');
+
+	canvas.style.display = 'none';
+	// video.style.display = 'none';
+	
+	takePhotoBtn.addEventListener('click', () => {
+		context.drawImage(video, 0, 0, 640, 480);
+		photo.src = canvas.toDataURL("image/png");
+
+	});
+
+	if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+	    navigator.mediaDevices.getUserMedia({ video: true }).then((stream) => {
+	        //video.src = window.URL.createObjectURL(stream);
+	        video.srcObject = stream;
+	        video.play();
+	    });
+	}
 
 	loadRegistryBtn.addEventListener('click', () => {
 		firebase.firestore().collection("visitorsLog").add(
@@ -24,7 +45,7 @@ else if (location.hash === '#visitors') {
 			visitEmail : document.querySelector('.visitEmail').value,
 			visitHost : document.querySelector('.visitHost').value,
 			visitName : document.querySelector('.visitName').value,
-			visitPhoto : document.querySelector ('.load-img').src }).
+			visitPhoto : photo }).
 		then(function(docRef) {
 		    console.log("Document written with ID: ", docRef.id, visitRegistry);
 		})
@@ -33,6 +54,3 @@ else if (location.hash === '#visitors') {
 		});
 	});
 }
-
-
-

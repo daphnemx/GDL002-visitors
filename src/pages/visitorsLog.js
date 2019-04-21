@@ -21,8 +21,9 @@ const visitorsLog = () => {
 const loadPhotoDiv = createElement('div', { 
 	className: 'load-photo-div flex-row',
 	children:[createElement('img', { src: "http://claudiagarfias.works/contents/uploads/media/kisspng-computer-icons.png", className: 'load-img' }),
-			createElement('button', { innerText: 'Tomar Foto', className: 'loadPhotoBtn' })
-	],
+			createElement('video', { autoplay: true, className:'video' }),
+			createElement('canvas', { width: '640', height: '480', className: 'canvas' }),
+			createElement('button', { innerText: 'Tomar Foto', className: 'takePhotoBtn' })],
 });
 
 const registerBtn = createElement('button', { innerText: 'Registrarse', className: 'registerBtn' });
