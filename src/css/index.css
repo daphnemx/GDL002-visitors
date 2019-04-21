@@ -1,22 +1,67 @@
+/*@import url('<https://fonts.googleapis.com/css?family=Open+Sans:200,300,400,600,700" rel="stylesheet">');
+*/
+*, *:before, *:after {
+	-webkit-box-sizing: border-box; 
+	-moz-box-sizing: border-box; 
+	box-sizing: border-box;
+	text-align: center;
+	font-family: 'Open Sans', sans-serif;
+}
+
+h2 {
+	font-weight: 300;
+	font-size: 1.25rem;
+}
+
+h1 {
+	font-weight: 400;
+	margin-bottom: 0.25rem;
+}
+
 .flex-column-form {
     display: flex;
 	flex-direction: column;
+	margin: 0 auto;
 }
 
 .flex-column-form label {
+	font-weight: 300;
+	font-size: 1rem;
 	text-align: left;
+	margin: .5rem auto .15rem 0;
 }
-.flex-column-form img {
-	margin: auto;
+
+.flex-column-form input {
+	width: 100%;
+	margin: 0 auto 1rem auto;
 }
 
 .flex-column-log {
     display: flex;
 	flex-direction: column;
-	margin: 2% 30%;
-	text-align: center;
+/*	margin: 2% 38%;
+*/	text-align: center;
+}
+
+.flex-column-log button {
+	width: 15rem;
+	margin: 2rem auto 1rem auto;
+}
+
+.flex-row {
+	display: flex;
+	/*! flex-direction: row; */
+	align-items: center;
+	justify-content: flex-start;
 }
 
 .load-img {
-	max-width: 10rem;
+	margin: 1rem 0 0 auto;
+	max-width: 8rem;
+	/*! margin: 1rem auto 0 auto; */
+}
+
+.flex-row button {
+	max-width: 8rem;
+	margin: 1rem auto 0 1rem;
 }

@@ -1,7 +1,7 @@
 const visitorsLog = () => {	
 	const form = createElement('form', {
 		className: 'log-form flex-column-form',
-		children: [createElement('h1', { innerText: '¡Bienvenida(o) Visitante!' }),
+		children: [createElement('h1', { innerText: 'Bienvenida(o) al Coworking' }),
 				createElement('h2', { innerText: 'Por favor Ingresa tus Datos:' }),
 				createElement('label', { innerText: 'Tu Nombre Completo:' }),
 				createElement('input', { className: 'visitName' }),
@@ -16,8 +16,8 @@ const visitorsLog = () => {
 };
 
 const loadPhotoDiv = createElement('div', { 
-	className: 'load-photo-div flex-column-form',
-	children:[createElement('img', { src: "http://claudiagarfias.works/contents/uploads/media/kisspng-computer-icons-waiter-user-profile-5b093110750377.2144367115273290404793.png", className: 'load-img' }),
+	className: 'load-photo-div flex-row',
+	children:[createElement('img', { src: "http://claudiagarfias.works/contents/uploads/media/kisspng-computer-icons.png", className: 'load-img' }),
 			createElement('button', { innerText: 'Tomar Foto', className: 'loadPhotoBtn' })
 	],
 });
