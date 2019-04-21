@@ -1,3 +1,24 @@
+<h3>1. (V1)</h3>
+
+**Historia** 
+
+- Yo como visitante necesito una interfaz donde poder registrar mis datos y una fotografía.
+
+**DoD**
+
+Ve un formulario donde ingresa:
+
+- Nombre del visitante
+- Email del visitante
+- Empresa del visitante
+- Motivo de la visita
+- Fecha de la visita
+- Hora de entrada
+- Fotografía
+- Hace click en botón de guardar
+
+
+
 # Registro de Visitantes
 
 ## Preámbulo

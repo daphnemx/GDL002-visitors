@@ -28,9 +28,8 @@ const loadPhotoDiv = createElement('div', {
 const registerBtn = createElement('button', { innerText: 'Registrarse', className: 'registerBtn' });
 
 const renderVisitorsScreen = () => {
-	const contentDiv = document.getElementById('root');
-	contentDiv.classList.add('flex-column-log');
-	contentDiv.innerHTML = visitorsLog().outerHTML + loadPhotoDiv.outerHTML + registerBtn.outerHTML;
+	
+	
 }
 
 
