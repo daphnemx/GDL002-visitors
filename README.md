@@ -1,3 +1,7 @@
+# Registro de Visitantes
+
+##Historias de usuario
+
 <h3>1. (V1)</h3>
 
 **Historia** 
@@ -61,7 +65,7 @@ Recibe un correo electrónico avisando que su visitante ya ha llegado y contiene
 - Puede elegir periodicidad para ver los visitantes
 
 
-# Registro de Visitantes
+
 
 ## Preámbulo
 
