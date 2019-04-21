@@ -10,7 +10,10 @@ const visitorsLog = () => {
 				createElement('label', { innerText: 'Empresa u Organización a la que Pertences:' }),
 				createElement('input', { className: 'visitCompany' }),
 				createElement('label', { innerText: 'Nombre Completo de tu Anfitrión:' }),
-				createElement('input', { className: 'visitHost' })],
+				createElement('input', { className: 'visitHost' }),
+				createElement('label', { innerText: 'Comentarios:' }),
+				createElement('input', { className: 'visitComments' })],
+
 		});
 	return form;
 };
