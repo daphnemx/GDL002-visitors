@@ -25,7 +25,6 @@ const loadPhotoDiv = createElement('div', {
 	],
 });
 
-const loadPhotoBtn = document.querySelector('.loadPhotoBtn');
 const registerBtn = createElement('button', { innerText: 'Registrarse', className: 'registerBtn' });
 
 const renderVisitorsScreen = () => {
