@@ -17,6 +17,48 @@ Ve un formulario donde ingresa:
 - Fotografía
 - Hace click en botón de guardar
 
+<h3>2. (V2)</h3>
+
+**Historia** 
+
+- Yo como visitante necesito poder elegir al usuario del coworking a quien visito.  
+
+**DoD** 
+
+- Le permite visualizar a los empleados del coworking
+- Le permite seleccionar un usuario en específico
+- Guarda la selección en una collection de Firebase
+
+<h3>3. (C1)</h3>
+
+**Historia** 
+
+- Yo como usuario del coworking necesito que me llegue una notificación cuando vienen a visitarme. 
+
+**DoD** 
+
+Recibe un correo electrónico avisando que su visitante ya ha llegado y contiene los datos de la persona que lo visita.
+
+<h3>4. (A2)</h3>
+
+**Historia** 
+
+- Yo como administradora necesito una interfaz donde pueda visualizar los visitantes de hoy.
+
+**DoD**
+
+- Ve una lista con los visitantes del día.
+
+<h3>5. (A1)</h3>
+
+**Historia** 
+
+- Yo como administradora necesito una interfaz donde pueda visualizar el histórico de visitantes. 
+
+**DoD**
+
+- Puede cambiar la fecha a otro día
+- Puede elegir periodicidad para ver los visitantes
 
 
 # Registro de Visitantes
