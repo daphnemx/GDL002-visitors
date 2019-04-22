@@ -19,19 +19,12 @@ const visitorsLog = () => {
 };
 
 const loadPhotoDiv = createElement('div', { 
-	className: 'load-photo-div flex-row',
+	className: 'load-photo-div',
 	children:[createElement('img', { src: "http://claudiagarfias.works/contents/uploads/media/kisspng-computer-icons.png", className: 'load-img' }),
+			createElement('button', { innerText: 'Tomar Foto', className: 'takePhotoBtn' }),
 			createElement('video', { autoplay: true, className:'video' }),
-			createElement('canvas', { width: '640', height: '480', className: 'canvas' }),
-			createElement('button', { innerText: 'Tomar Foto', className: 'takePhotoBtn' })],
+			createElement('canvas', { width: '480', height: '480', className: 'canvas' })],
 });
 
 const registerBtn = createElement('button', { innerText: 'Registrarse', className: 'registerBtn' });
-
-const renderVisitorsScreen = () => {
-	
-	
-}
-
-
 

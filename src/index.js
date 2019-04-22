@@ -12,30 +12,31 @@ if (location.hash === '') {
 
 else if (location.hash === '#visitors') {
 	contentDiv.innerHTML = visitorsLog().outerHTML + loadPhotoDiv.outerHTML + registerBtn.outerHTML;
+
 	const video = document.querySelector('.video');
 	const canvas = document.querySelector('.canvas');
-	const context = canvas.getContext('2d');
+	const canvasContext = canvas.getContext('2d');
 	const takePhotoBtn = document.querySelector('.takePhotoBtn');
 	const loadRegistryBtn = document.querySelector('.registerBtn');
 	const photo = document.querySelector ('.load-img');
 
 	canvas.style.display = 'none';
-	// video.style.display = 'none';
-	
+	// Takes PHOTO and places it in IMG ELEMENT 'load-img' for write in document
 	takePhotoBtn.addEventListener('click', () => {
-		context.drawImage(video, 0, 0, 640, 480);
+		canvasContext.drawImage(video, 0, 0, 480, 480);
 		photo.src = canvas.toDataURL("image/png");
+		video.style.display = 'none';
+		takePhotoBtn.style.display = 'none';
 
 	});
-
-	if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-	    navigator.mediaDevices.getUserMedia({ video: true }).then((stream) => {
-	        //video.src = window.URL.createObjectURL(stream);
-	        video.srcObject = stream;
-	        video.play();
-	    });
-	}
-
+		// Asks for permission to use camera and then STREAMS image on VIDEO ELEMENT
+		if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+		    navigator.mediaDevices.getUserMedia({ video: true }).then((stream) => {
+		        video.srcObject = stream;
+		        video.play();
+		    });
+		}
+	// WRITES FIREBASE DOCUMENT Visitor Registry
 	loadRegistryBtn.addEventListener('click', () => {
 		firebase.firestore().collection("visitorsLog").add(
 			visitRegistry = { date: getDate(),
@@ -45,7 +46,7 @@ else if (location.hash === '#visitors') {
 			visitEmail : document.querySelector('.visitEmail').value,
 			visitHost : document.querySelector('.visitHost').value,
 			visitName : document.querySelector('.visitName').value,
-			visitPhoto : photo }).
+			visitPhoto : photo.src }).
 		then(function(docRef) {
 		    console.log("Document written with ID: ", docRef.id, visitRegistry);
 		})
