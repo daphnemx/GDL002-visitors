@@ -20,8 +20,9 @@ const visitorsLog = () => {
 
 const loadPhotoDiv = createElement('div', { 
 	className: 'load-photo-div',
-	children:[createElement('img', { src: "http://claudiagarfias.works/contents/uploads/media/kisspng-computer-icons.png", className: 'load-img' }),
-			createElement('button', { innerText: 'Tomar Foto', className: 'takePhotoBtn' }),
+	children:[createElement('img', { src: "assets/kisspng-computer-icons.png", className: 'load-img' }),
+			createElement('button', { className: 'takePhotoBtn' }),
+			createElement('button', { innerText: 'Tomar Foto', className: 'openCameraBtn' }),
 			createElement('video', { autoplay: true, className:'video' }),
 			createElement('canvas', { width: '480', height: '480', className: 'canvas' })],
 });

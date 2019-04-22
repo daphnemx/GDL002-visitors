@@ -69,3 +69,19 @@ h1 {
 	max-width: 6rem;
 	margin: 1rem auto 0 1rem;
 }
+
+.takePhotoBtn {
+	background:url(https://claudiagarfias.works/laboratoria/sharedimages/cameraicon.png) no-repeat;
+	cursor:pointer;
+    border:none;
+    width: 65px !important;
+    height: 65px;
+    margin: 0 auto;
+    position: absolute;
+    left: 48%;
+}
+
+.openCameraBtn {
+	width:6rem !important;
+	margin-top: 0.5rem !important;
+}
