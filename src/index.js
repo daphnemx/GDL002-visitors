@@ -58,6 +58,7 @@ else if (location.hash === '#visitors') {
 			visitCompany : document.querySelector('.visitCompany').value,
 			visitEmail : document.querySelector('.visitEmail').value,
 			visitHost : document.querySelector('.visitHost').value,
+			visitMaxTime : document.querySelector('.visitMaxTime').value,
 			visitName : document.querySelector('.visitName').value,
 			visitPhoto : photo.src }).
 		then(function(docRef) {

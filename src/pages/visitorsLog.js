@@ -11,9 +11,16 @@ const visitorsLog = () => {
 				createElement('input', { className: 'visitCompany' }),
 				createElement('label', { innerText: 'Nombre Completo de tu Anfitrión:' }),
 				createElement('input', { className: 'visitHost' }),
+				createElement('label', { innerText: '¿Cuál es tu Tiempo de Visita Máximo Estimado?' }),
+				createElement('select', { className: 'visitMaxTime', children:
+					[createElement('option', { value: '00:30', innerText: '00:30' }),
+					createElement('option', { value: '01:00', innerText: '01:00' }),
+					createElement('option', { value: '01:30', innerText: '01:30' }),
+					createElement('option', { value: '02:00', innerText: '02:00' }),
+					createElement('option', { value: '02:30', innerText: '02:30' }),
+					createElement('option', { value: '03:00', innerText: '03:00' })] }),
 				createElement('label', { innerText: 'Comentarios:' }),
 				createElement('input', { className: 'visitComments' })],
-
 		});
 	return form;
 };
