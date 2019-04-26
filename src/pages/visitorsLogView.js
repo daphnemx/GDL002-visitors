@@ -13,7 +13,7 @@ const visitorsLogView = () => {
 				createElement('select', { className: 'visitHost', children:
 					[createElement('option', { value: '', innerText: 'Elige:' }),
 					createElement('option', { value: 'patriciaga@protonmail.com', innerText: 'Patricia Garfias' }),
-					createElement('option', { value: 'stuff@claudiagarfias.works', innerText: 'Otro Usuario' })] }),
+					createElement('option', { value: 'stuff@claudiagarfias.works', innerText: 'Otro Coworker' })] }),
 				createElement('label', { innerText: '¿Cuál es tu Tiempo de Visita Máximo Estimado?' }),
 				createElement('select', { className: 'visitMaxTime', children:
 					[createElement('option', { value: '00:30', innerText: '00:30 min' }),

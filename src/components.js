@@ -35,6 +35,19 @@ const newVisitorRegistry = () => {
     location.reload();
 };
 
+const newCoworkerRegistry = () => { 
+  // document.querySelector('.getVisitors').addEventListener('click', () => {
+    window.location = '#coworkers';
+    location.reload();
+};
+
+
+const getAdmin = () => { 
+  // document.querySelector('.getVisitors').addEventListener('click', () => {
+    window.location = '#admin';
+    location.reload();
+};
+
 const sendEmailNotification = () => {
   Email.send({
     SecureToken : "bfcd0384-8e4b-4639-9ad6-22a9c5fcfba9",

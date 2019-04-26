@@ -4,9 +4,10 @@ contentDiv.classList.add('flex-column-log');
 // //// MAIN SCREEN //// //
 if (location.hash === '') {
 	contentDiv.innerHTML = backgroundVid.outerHTML + mainView().outerHTML;
-	
+
 	document.querySelector('.getVisitors').addEventListener('click', newVisitorRegistry);
-	document.querySelector('.sendEmail').addEventListener('click', sendEmailNotification);
+	document.querySelector('.getCoworkers').addEventListener('click', newCoworkerRegistry);
+	document.querySelector('.getAdmin').addEventListener('click', getAdmin);
 }
 
 //	//// VISITORS SCREEN //// //
@@ -67,6 +68,12 @@ else if (location.hash === '#visitors') {
 	});
 }
 
+// //// ADMINISTRATION SCREEN //// //
+else if (location.hash === '#admin') {
+
+}
+
+// //// REGISTRY CONFIRMED SCREEN //// //
 else if (location.hash === '#confirmed-visitor') {
 	contentDiv.innerHTML = logConfirmedView().outerHTML;
 	document.querySelector('.getVisitors').addEventListener('click', newVisitorRegistry);
