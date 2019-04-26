@@ -59,10 +59,8 @@ else if (location.hash === '#visitors') {
 
 	});
 
-	// WRITES FIREBASE DOCUMENT Visitor Registry
-	loadRegistryBtn.addEventListener('click', () => {
-		firebase.firestore().collection("visitorsLog").add(
-			visitRegistry = { date: getDate(),
+	const getVisitorRegistry = () => {
+	visitRegistry = { date: getDate(),
 			time: getTime(),
 			visitComments : document.querySelector('.visitComments').value,
 			visitCompany : document.querySelector('.visitCompany').value,
@@ -70,13 +68,12 @@ else if (location.hash === '#visitors') {
 			visitHost : document.querySelector('.visitHost').value,
 			visitMaxTime : document.querySelector('.visitMaxTime').value,
 			visitName : document.querySelector('.visitName').value,
-			visitPhoto : photo.src }).
-		then(function(docRef) {
-		    console.log("Document written with ID: ", docRef.id, visitRegistry);
-		    location.reload(true);
-		})
-		.catch(function(error) {
-		    console.error("Error adding document: ", error);
-		});
+			visitPhoto : photo.src };
+	};
+
+	// WRITES FIREBASE DOCUMENT Visitor Registry
+	loadRegistryBtn.addEventListener('click', () => {
+		getVisitorRegistry();
+		registerVisit();
 	});
 }
