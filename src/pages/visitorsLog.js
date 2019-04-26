@@ -9,8 +9,11 @@ const visitorsLogView = () => {
 				createElement('input', { className: 'visitEmail' }),
 				createElement('label', { innerText: 'Empresa u Organización a la que Pertences:' }),
 				createElement('input', { className: 'visitCompany' }),
-				createElement('label', { innerText: 'Nombre Completo de tu Anfitrión:' }),
-				createElement('input', { className: 'visitHost' }),
+				createElement('label', { innerText: '¿Quién es tu anfitrión?' }),
+				createElement('select', { className: 'visitHost', children:
+					[createElement('option', { value: '00:30', innerText: 'Elige:' }),
+					createElement('option', { value: 'patriciaga@protonmail.com', innerText: 'Patricia Garfias' }),
+					createElement('option', { value: 'micorreoparaotrascosas@gmail.com', innerText: 'Otro Usuario' })] }),
 				createElement('label', { innerText: '¿Cuál es tu Tiempo de Visita Máximo Estimado?' }),
 				createElement('select', { className: 'visitMaxTime', children:
 					[createElement('option', { value: '00:30', innerText: '00:30' }),
