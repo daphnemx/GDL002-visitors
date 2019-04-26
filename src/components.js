@@ -47,8 +47,8 @@ const sendEmailNotification = () => {
             El tiempo máximo para esta visita es: ${visitRegistry.visitMaxTime} hrs, por favor recuerda avisar al lobby cuando tu reunión haya terminado.<br><br>
             Gracias, saludos del equipo del Coworking.`
     }).then(
-    message => contentDiv.innerHTML = logConfirmedView().outerHTML + `Mensaje ${message}`
-    )};
+    window.location = '#confirmed-visitor'
+    ).then(location.reload())};
 
 module.exports = createElement;
 

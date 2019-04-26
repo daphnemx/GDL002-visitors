@@ -66,3 +66,8 @@ else if (location.hash === '#visitors') {
 		registerVisit();
 	});
 }
+
+else if (location.hash === '#confirmed-visitor') {
+	contentDiv.innerHTML = logConfirmedView().outerHTML;
+	document.querySelector('.getVisitors').addEventListener('click', newVisitorRegistry);
+}
