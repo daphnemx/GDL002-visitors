@@ -29,6 +29,12 @@ const getTime = () => {
    return time;
 };
 
+const newVisitorRegistry = () => { 
+  // document.querySelector('.getVisitors').addEventListener('click', () => {
+    window.location = '#visitors';
+    location.reload();
+};
+
 const sendEmailNotification = () => {
   Email.send({
     SecureToken : "bfcd0384-8e4b-4639-9ad6-22a9c5fcfba9",
@@ -36,14 +42,13 @@ const sendEmailNotification = () => {
     From : "apps@claudiagarfias.works",
     Subject : `Tu invitado ${visitRegistry.visitName} acaba de llegar al Coworking 🙋🏢`,
     Body : `¡Hola ${visitRegistry.visitHost}!<br><br>
-            ${visitRegistry.visitName} te está esperando en el punto acordado.<br>
-            Mensaje de tu invitado: ${visitRegistry.visitComments}.<br>
-            El tiempo máximo para esta visita es: ${visitRegistry.visitMaxTime}, por favor recuerda avisar al lobby cuando tu reunión haya terminado.<br><br>
-            Gracias, saludos.`
+            ${visitRegistry.visitName} ya está en el lobby. ¡No lo hagas esperar demasiado! 🙂<br><br>
+            Mensaje de tu invitado: "${visitRegistry.visitComments}".<br><br>
+            El tiempo máximo para esta visita es: ${visitRegistry.visitMaxTime} hrs, por favor recuerda avisar al lobby cuando tu reunión haya terminado.<br><br>
+            Gracias, saludos del equipo del Coworking.`
     }).then(
-    message => alert(message)
-  ).then( () => {location.reload(true);});
-};
+    message => contentDiv.innerHTML = logConfirmedView().outerHTML + `Mensaje ${message}`
+    )};
 
 module.exports = createElement;
 

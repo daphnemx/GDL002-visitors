@@ -5,13 +5,8 @@ contentDiv.classList.add('flex-column-log');
 if (location.hash === '') {
 	contentDiv.innerHTML = backgroundVid.outerHTML + mainView().outerHTML;
 	
-	document.querySelector('.getVisitors').addEventListener('click', () => {
-		window.location = '#visitors';
-		location.reload();
-	});
-
+	document.querySelector('.getVisitors').addEventListener('click', newVisitorRegistry);
 	document.querySelector('.sendEmail').addEventListener('click', sendEmailNotification);
-
 }
 
 //	//// VISITORS SCREEN //// //
