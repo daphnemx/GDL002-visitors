@@ -1,4 +1,4 @@
-const visitorsLog = () => {	
+const visitorsLogView = () => {	
 	const form = createElement('form', {
 		className: 'log-form flex-column-form',
 		children: [createElement('h1', { innerText: 'Bienvenida(o) al Coworking' }),
@@ -35,4 +35,3 @@ const loadPhotoDiv = createElement('div', {
 });
 
 const registerBtn = createElement('button', { innerText: 'Registrarse', className: 'registerBtn' });
-

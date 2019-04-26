@@ -1,18 +1,9 @@
 const contentDiv = document.getElementById('root');
 contentDiv.classList.add('flex-column-log');
 
+// //// MAIN SCREEN //// //
 if (location.hash === '') {
-	const backgroundVid = createElement('video', { className: 'background-vid', autoplay : true, muted: true, loop: true, src: 'https://claudiagarfias.works/contents/uploads/media/Busy-People.mp4' });
-	// const logoSection = createElement('section', { className: 'logo-section',Z children: [
-	// 	createElement('h1', { innerText: 'Registro de Visitantes' })
-	// 	], });
-	const menuSection = createElement('section', { className: 'flex-row-main-screen', children: [
-		createElement('button', { innerText: 'Registrar Visitantes', className: 'getVisitors main-screen-btn' }),
-		createElement('button', { innerText: 'Administración', className: 'getAdmin main-screen-btn' }),
-		createElement('button', { innerText: 'Registrar Coworkers', className: 'getCoworkers main-screen-btn' })
-		], });
-	// backgroundVid.playbackRate = .25;
-	contentDiv.innerHTML = backgroundVid.outerHTML + menuSection.outerHTML;
+	contentDiv.innerHTML = backgroundVid.outerHTML + mainView().outerHTML;
 	
 	document.querySelector('.getVisitors').addEventListener('click', () => {
 		window.location = '#visitors';
@@ -22,7 +13,7 @@ if (location.hash === '') {
 
 //	//// VISITORS SCREEN //// //
 else if (location.hash === '#visitors') {
-	contentDiv.innerHTML = visitorsLog().outerHTML + loadPhotoDiv.outerHTML + registerBtn.outerHTML;
+	contentDiv.innerHTML = visitorsLogView().outerHTML + loadPhotoDiv.outerHTML + registerBtn.outerHTML;
 
 	const video = document.querySelector('.video');
 	const canvas = document.querySelector('.canvas');
@@ -36,15 +27,6 @@ else if (location.hash === '#visitors') {
 	canvas.style.display = 'none';
 	takePhotoBtn.style.display = 'none';
 
-	// Takes PHOTO and places it in IMG ELEMENT 'load-img' for write in document
-	takePhotoBtn.addEventListener('click', () => {
-		canvasContext.drawImage(video, 0, 0, 480, 480);
-		photo.src = canvas.toDataURL("image/png");
-		video.style.display = 'none';
-		takePhotoBtn.style.display = 'none';
-
-	});
-
 	// Asks for permission to use camera and then STREAMS image on VIDEO ELEMENT
 	openCameraBtn.addEventListener('click', () => {
 		if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
@@ -56,9 +38,18 @@ else if (location.hash === '#visitors') {
 				openCameraBtn.style.display = 'none';
 		    });
 		}
+	});
+
+	// Takes PHOTO and places it in IMG ELEMENT 'load-img' for write in document
+	takePhotoBtn.addEventListener('click', () => {
+		canvasContext.drawImage(video, 0, 0, 480, 480);
+		photo.src = canvas.toDataURL("image/png");
+		video.style.display = 'none';
+		takePhotoBtn.style.display = 'none';
 
 	});
 
+	// Visitor Registry OBJECT //
 	const getVisitorRegistry = () => {
 	visitRegistry = { date: getDate(),
 			time: getTime(),
@@ -71,7 +62,7 @@ else if (location.hash === '#visitors') {
 			visitPhoto : photo.src };
 	};
 
-	// WRITES FIREBASE DOCUMENT Visitor Registry
+	// WRITES FIREBASE DOCUMENT Visitor Registry //
 	loadRegistryBtn.addEventListener('click', () => {
 		getVisitorRegistry();
 		registerVisit();
