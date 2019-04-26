@@ -2,8 +2,18 @@ const contentDiv = document.getElementById('root');
 contentDiv.classList.add('flex-column-log');
 
 if (location.hash === '') {
-	const a = createElement('button', { innerText: 'Registro de Visitantes', className: 'getVisitors main-screen-btn' });
-	contentDiv.innerHTML = a.outerHTML;
+	const backgroundVid = createElement('video', { className: 'background-vid', autoplay : true, muted: true, loop: true, src: 'https://claudiagarfias.works/contents/uploads/media/Busy-People.mp4' });
+	// const logoSection = createElement('section', { className: 'logo-section',Z children: [
+	// 	createElement('h1', { innerText: 'Registro de Visitantes' })
+	// 	], });
+	const menuSection = createElement('section', { className: 'flex-row-main-screen', children: [
+		createElement('button', { innerText: 'Registrar Visitantes', className: 'getVisitors main-screen-btn' }),
+		createElement('button', { innerText: 'Administración', className: 'getAdmin main-screen-btn' }),
+		createElement('button', { innerText: 'Registrar Coworkers', className: 'getCoworkers main-screen-btn' })
+		], });
+	// backgroundVid.playbackRate = .25;
+	contentDiv.innerHTML = backgroundVid.outerHTML + menuSection.outerHTML;
+	
 	document.querySelector('.getVisitors').addEventListener('click', () => {
 		window.location = '#visitors';
 		location.reload();
