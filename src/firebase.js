@@ -8,8 +8,8 @@ firebase.initializeApp({
 });
 
 const registerVisit = (getVisitorRegistry) => {
-	firebase.firestore().collection("visitorsLog").add(visitRegistry).
-		then(function(docRef) {
+	firebase.firestore().collection("visitorsLog").add(visitRegistry)
+		.then(function(docRef) {
 		    console.log("Document written with ID: ", docRef.id, visitRegistry);
 		    sendEmailNotification();
 		    // location.reload(true);
