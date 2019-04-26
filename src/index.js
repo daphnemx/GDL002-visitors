@@ -9,6 +9,9 @@ if (location.hash === '') {
 		window.location = '#visitors';
 		location.reload();
 	});
+
+	document.querySelector('.sendEmail').addEventListener('click', sendEmailNotification);
+
 }
 
 //	//// VISITORS SCREEN //// //

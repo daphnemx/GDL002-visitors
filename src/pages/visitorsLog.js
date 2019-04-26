@@ -35,3 +35,4 @@ const loadPhotoDiv = createElement('div', {
 });
 
 const registerBtn = createElement('button', { innerText: 'Registrarse', className: 'registerBtn' });
+
