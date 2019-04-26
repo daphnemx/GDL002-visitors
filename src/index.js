@@ -55,6 +55,7 @@ else if (location.hash === '#visitors') {
 			visitComments : document.querySelector('.visitComments').value,
 			visitCompany : document.querySelector('.visitCompany').value,
 			visitEmail : document.querySelector('.visitEmail').value,
+			visitExitTime :'',
 			visitHost : document.querySelector('.visitHost').value,
 			visitMaxTime : document.querySelector('.visitMaxTime').value,
 			visitName : document.querySelector('.visitName').value,
