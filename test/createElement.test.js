@@ -1,4 +1,4 @@
-const createElement = require('../src/components');
+const createElement = require('../src/controller');
 
 describe('createElement', () => {
   it('is a function', () => {

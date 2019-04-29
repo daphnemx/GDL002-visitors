@@ -14,6 +14,24 @@ const createElement = (tagName, opts = {}) => {
   return element;
 };
 
+const newVisitorRegistry = () => { 
+  // document.querySelector('.getVisitors').addEventListener('click', () => {
+    window.location = '#visitors';
+    location.reload();
+};
+
+const newCoworkerRegistry = () => { 
+  // document.querySelector('.getVisitors').addEventListener('click', () => {
+    window.location = '#coworkers';
+    location.reload();
+};
+
+const getAdmin = () => { 
+  // document.querySelector('.getVisitors').addEventListener('click', () => {
+    window.location = '#admin';
+    location.reload();
+};
+
 const getDate=()=> {
     let today = new Date();
     let dd = String(today.getDate()).padStart(2, '0');
@@ -29,24 +47,6 @@ const getTime = () => {
    return time;
 };
 
-const newVisitorRegistry = () => { 
-  // document.querySelector('.getVisitors').addEventListener('click', () => {
-    window.location = '#visitors';
-    location.reload();
-};
-
-const newCoworkerRegistry = () => { 
-  // document.querySelector('.getVisitors').addEventListener('click', () => {
-    window.location = '#coworkers';
-    location.reload();
-};
-
-
-const getAdmin = () => { 
-  // document.querySelector('.getVisitors').addEventListener('click', () => {
-    window.location = '#admin';
-    location.reload();
-};
 
 const sendEmailNotification = () => {
   Email.send({
@@ -59,9 +59,9 @@ const sendEmailNotification = () => {
             Mensaje de tu invitado: "${visitRegistry.visitComments}".<br><br>
             El tiempo máximo para esta visita es: ${visitRegistry.visitMaxTime} hrs, por favor recuerda avisar al lobby cuando tu reunión haya terminado.<br><br>
             Gracias, saludos del equipo del Coworking.`
-    }).then(
-    window.location = '#confirmed-visitor'
-    ).then(location.reload())};
+    })
+  // .then(window.location = '#confirmed-visitor').then(location.reload())
+};
 
 module.exports = createElement;
 

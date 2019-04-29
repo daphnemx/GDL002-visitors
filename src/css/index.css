@@ -20,6 +20,10 @@ h1 {
 	margin-bottom: 0.25rem;
 }
 
+a{
+	text-decoration: none;
+}
+
 .flex-column-form {
     display: flex;
 	flex-direction: column;

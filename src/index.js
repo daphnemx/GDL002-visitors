@@ -66,16 +66,25 @@ else if (location.hash === '#visitors') {
 	loadRegistryBtn.addEventListener('click', () => {
 		getVisitorRegistry();
 		registerVisit();
+		contentDiv.innerHTML = logConfirmedView().outerHTML + returnToVisitorsBtn().outerHTML;	    
 	});
 }
 
 // //// ADMINISTRATION SCREEN //// //
 else if (location.hash === '#admin') {
+	contentDiv.innerHTML = adminNav().outerHTML + adminTitle().outerHTML + todayVisitorsDiv().outerHTML;
+	// contentDiv =+ todayVisitorsDiv().outerHTML;
 
 }
 
 // //// REGISTRY CONFIRMED SCREEN //// //
 else if (location.hash === '#confirmed-visitor') {
 	contentDiv.innerHTML = logConfirmedView().outerHTML;
-	document.querySelector('.getVisitors').addEventListener('click', newVisitorRegistry);
+			// getLastRegistry();
+
+	
+}
+
+else if (location.hash === '#plantilla') {
+	contentDiv.innerHTML = plantilla
 }
