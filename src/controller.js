@@ -1,19 +1,3 @@
-const createElement = (tagName, opts = {}) => {
-  const { children, ...rest } = opts;
-  const element = Object.assign(
-    document.createElement(tagName),
-    rest,
-  );
-
-  if (children && typeof children.forEach === 'function') {
-    children
-      .filter(item => item)
-      .forEach(element.appendChild.bind(element));
-  }
-
-  return element;
-};
-
 const newVisitorRegistry = () => { 
   // document.querySelector('.getVisitors').addEventListener('click', () => {
     window.location = '#visitors';
@@ -32,36 +16,7 @@ const getAdmin = () => {
     location.reload();
 };
 
-const getDate=()=> {
-    let today = new Date();
-    let dd = String(today.getDate()).padStart(2, '0');
-    let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-    let yyyy = today.getFullYear();
-    today = `${dd}/${mm}/${yyyy}`;
-    return today;
-};
 
-const getTime = () => {
-   let today = new Date();
-   let time = `${today.getHours()}:${today.getMinutes()}:${today.getSeconds()}`;
-   return time;
-};
-
-
-const sendEmailNotification = () => {
-  Email.send({
-    SecureToken : "bfcd0384-8e4b-4639-9ad6-22a9c5fcfba9",
-    To : visitRegistry.visitHost,
-    From : "apps@claudiagarfias.works",
-    Subject : `Tu invitado ${visitRegistry.visitName} acaba de llegar al Coworking 🙋🏢`,
-    Body : `¡Hola ${visitRegistry.visitHost}!<br><br>
-            ${visitRegistry.visitName} ya está en el lobby. ¡No lo hagas esperar demasiado! 🙂<br><br>
-            Mensaje de tu invitado: "${visitRegistry.visitComments}".<br><br>
-            El tiempo máximo para esta visita es: ${visitRegistry.visitMaxTime} hrs, por favor recuerda avisar al lobby cuando tu reunión haya terminado.<br><br>
-            Gracias, saludos del equipo del Coworking.`
-    })
-  // .then(window.location = '#confirmed-visitor').then(location.reload())
-};
 
 module.exports = createElement;
 

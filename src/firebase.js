@@ -7,10 +7,26 @@ firebase.initializeApp({
 	messagingSenderId: "573685055395"
 });
 
+const getDate =()=> {
+    let today = new Date();
+    let dd = String(today.getDate()).padStart(2, '0');
+    let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    let yyyy = today.getFullYear();
+    today = `${dd}/${mm}/${yyyy}`;
+    return today;
+};
+
+const getTime = () => {
+   let today = new Date();
+   let time = `${today.getHours()}:${today.getMinutes()}:${today.getSeconds()}`;
+   return time;
+};
+
+const db = firebase.firestore();
 let lastRegistryId = '';
 
 const registerVisit = (getVisitorRegistry) => {
-	firebase.firestore().collection("visitorsLog").add(visitRegistry)
+	db.collection("visitorsLog").add(visitRegistry)
 		.then((docRef) => {
 		    lastRegistryId = docRef.id;
 		    console.log("Document written with ID: ", lastRegistryId, visitRegistry);
@@ -22,8 +38,6 @@ const registerVisit = (getVisitorRegistry) => {
 		    console.error("Error adding document: ", error);
 		});
 };
-
-const db = firebase.firestore();
 
 // var docRef = db.collection("visitorsLog").doc(lastRegistryId);
 const getLastRegistry = () => {
@@ -39,4 +53,19 @@ const getLastRegistry = () => {
 	});
 }
 
+const getTodayVisitors = (getDate) => {
+	let date = getDate();
+	console.log(date);
+	db.collection("visitorsLog").where("date", `==`, `${date}`)
+    .get()
+    .then(function(querySnapshot) {
+        querySnapshot.forEach(function(doc) {
+            // doc.data() is never undefined for query doc snapshots
+            console.log(doc.id, " => ", doc.data());
+        });
+    })
+    .catch(function(error) {
+        console.log("Error getting documents: ", error);
+    });
 
+};
