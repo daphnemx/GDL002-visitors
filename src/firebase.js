@@ -53,18 +53,38 @@ const getLastRegistry = () => {
 	});
 }
 
+let todayVisitorsObj = {};
+// const visitorPhotoDOM = document.querySelector('.visitorPhotoDOM');
+
 const getTodayVisitors = (getDate) => {
-	let date = getDate();
-	db.collection("visitorsLog").where("date", `==`, `${date}`)
+	db.collection("visitorsLog").where("date", `==`, `${getDate()}`)
     .get()
     .then(function(querySnapshot) {
         querySnapshot.forEach(function(doc) {
+
+        	let todayVisitorDiv = createElement('div', { 
+            className: 'todayVisitorsDivDOM',
+            	children: [createElement('p', { innerText: `ID Documento: ${doc.id}
+            												Nombre del visitante: ${doc.data().visitName}
+            												Fecha: ${doc.data().date}
+            												Hora: ${doc.data().time}
+            												Email: ${doc.data().visitEmail}
+            												Empresa u Organización: ${doc.data().visitCompany}
+            												Anfitrión: ${doc.data().visitHost}
+            												Tiempo de visita registrado: ${doc.data().visitMaxTime}
+            												Comentarios: ${doc.data().visitComments}` }),
+            				createElement('img', { src: `${doc.data().visitPhoto}` }),
+            				createElement('button', { innerText: 'Ingresar Hora de Salida' })] });
+            
+            contentDiv.innerHTML += todayVisitorDiv.outerHTML;
             // doc.data() is never undefined for query doc snapshots
+            // todayVisitorsObj.id = doc.id;
+            // todayVisitorsObj.data = doc.data();
+            // visitorPhotoDOM.src = doc.data().visitPhoto;
             console.log(doc.id, " => ", doc.data());
         });
     })
     .catch(function(error) {
         console.log("Error getting documents: ", error);
     });
-
 };

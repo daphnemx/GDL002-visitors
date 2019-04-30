@@ -18,7 +18,7 @@ else if (location.hash === '#visitors') {
 
 // //// ADMINISTRATION SCREEN //// //
 else if (location.hash === '#admin') {
-	contentDiv.innerHTML = adminNav().outerHTML + adminTitle().outerHTML + todayVisitorsDiv().outerHTML;
+	contentDiv.innerHTML = adminNav().outerHTML + adminTitle().outerHTML;
 	// contentDiv =+ todayVisitorsDiv().outerHTML;
 
 }
