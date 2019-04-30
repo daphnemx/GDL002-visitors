@@ -16,8 +16,6 @@ const getAdmin = () => {
     location.reload();
 };
 
-
-
 module.exports = createElement;
 
 // const render = (Component, target) => {

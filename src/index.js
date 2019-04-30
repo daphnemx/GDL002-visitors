@@ -29,6 +29,11 @@ else if (location.hash === '#confirmed-visitor') {
 			// getLastRegistry();
 }
 
-else if (location.hash === '#plantilla') {
-	contentDiv.innerHTML = plantilla
+else if (location.hash === '#coworkers') {
+	contentDiv.innerHTML = '';
 }
+
+window.onpopstate = (event) => {
+  console.log("location: " + document.location + ", state: " + JSON.stringify(event.state));
+  window.location.reload();
+};

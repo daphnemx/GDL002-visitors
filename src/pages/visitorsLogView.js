@@ -79,7 +79,7 @@ const loadPhotoEtc = () => {
 
 	});
 
-		const getVisitorRegistry = () => {
+	const getVisitorRegistry = () => {
 	visitRegistry = { date: getDate(),
 			time: getTime(),
 			visitComments : document.querySelector('.visitComments').value,

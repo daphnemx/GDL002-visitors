@@ -1,4 +1,4 @@
-const backgroundVid = createElement('video', { className: 'background-vid', autoplay : true, muted: true, loop: true, src: 'https://claudiagarfias.works/contents/uploads/media/Busy-People.mp4' });
+const backgroundVid = createElement('video', { className: 'background-vid', autoplay : true, muted: true, loop: true, src: 'https://claudiagarfias.works/contents/uploads/media/coworking-background-video.mp4' });
 
 const mainView = () => {
 	// const logoSection = createElement('section', { className: 'logo-section',Z children: [

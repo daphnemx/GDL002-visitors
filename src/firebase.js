@@ -55,7 +55,6 @@ const getLastRegistry = () => {
 
 const getTodayVisitors = (getDate) => {
 	let date = getDate();
-	console.log(date);
 	db.collection("visitorsLog").where("date", `==`, `${date}`)
     .get()
     .then(function(querySnapshot) {
