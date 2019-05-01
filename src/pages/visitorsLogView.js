@@ -41,8 +41,7 @@ const registerBtn = createElement('button', { innerText: 'Registrarse', classNam
 
 const contentDivAdd = document.getElementById('root');
 
-const loadPhotoEtc = () => { 
-	console.log('que esta pasandaa?');
+const loadPhotoAndRegistryBtn = () => { 
 	contentDivAdd.innerHTML += loadPhotoDiv.outerHTML + registerBtn.outerHTML;
 
 	const video = document.querySelector('.video');

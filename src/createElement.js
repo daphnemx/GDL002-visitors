@@ -13,3 +13,5 @@ const createElement = (tagName, opts = {}) => {
 
   return element;
 };
+
+module.exports = createElement;

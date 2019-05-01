@@ -64,17 +64,44 @@ const getTodayVisitors = (getDate) => {
 
         	let todayVisitorDiv = createElement('div', { 
             className: 'todayVisitorsDivDOM',
-            	children: [createElement('p', { innerText: `ID Documento: ${doc.id}
-            												Nombre del visitante: ${doc.data().visitName}
-            												Fecha: ${doc.data().date}
-            												Hora: ${doc.data().time}
-            												Email: ${doc.data().visitEmail}
-            												Empresa u Organización: ${doc.data().visitCompany}
-            												Anfitrión: ${doc.data().visitHost}
-            												Tiempo de visita registrado: ${doc.data().visitMaxTime}
-            												Comentarios: ${doc.data().visitComments}` }),
-            				createElement('img', { src: `${doc.data().visitPhoto}` }),
-            				createElement('button', { innerText: 'Ingresar Hora de Salida' })] });
+            	children: [ createElement('img', { src: `${doc.data().visitPhoto}` }),
+                            
+                        createElement('table', { className: 'visitor-table', children:
+                        [createElement('tr', { className:'left-column-vt', children:
+                            [createElement('td', {innerText: 'ID:'}),
+                            createElement('td', {innerText: 'Fecha:'}),
+                            createElement('td', {innerText: 'Hora de ingreso:'}),
+                            createElement('td', {innerText: 'Hora de salida:'}),
+                            createElement('td', {innerText: 'Nombre del Visitante:'}),
+                            createElement('td', {innerText: 'Email:'}),
+                            createElement('td', {innerText: 'Empresa u Organización:'}),
+                            createElement('td', {innerText: 'Anfitrión:'}),
+                            createElement('td', {innerText: 'Tiempo de visita seleccionado:'}),
+                            createElement('td', {innerText: 'Comentarios:'})] }),
+
+                        createElement('tr', { className:'right-column-vt', children:
+                            [createElement('td', {innerText: `${doc.id}`}),
+                            createElement('td', {innerText: `${doc.data().date}`}),
+                            createElement('td', {innerText: `${doc.data().time}`}),
+                            createElement('td', {innerText: `Pendiente`}),
+                            createElement('td', {innerText: `${doc.data().visitName}`}),
+                            createElement('td', {innerText: `${doc.data().visitEmail}`}),
+                            createElement('td', {innerText: `${doc.data().visitCompany}`}),
+                            createElement('td', {innerText: `${doc.data().visitHost}`}),
+                            createElement('td', {innerText: `${doc.data().visitMaxTime}`}),
+                            createElement('td', {innerText: `${doc.data().visitComments}`})] })
+                        ] }),
+                        //     createElement('p', { innerText: `ID: ${doc.id}
+            												// Nombre del visitante: ${doc.data().visitName}
+            												// Fecha: ${doc.data().date}
+            												// Hora de Ingreso: ${doc.data().time}
+            												// Email: ${doc.data().visitEmail}
+            												// Empresa u Organización: ${doc.data().visitCompany}
+            												// Anfitrión: ${doc.data().visitHost}
+            												// Tiempo de visita registrado: ${doc.data().visitMaxTime}
+            												// Comentarios: ${doc.data().visitComments}` }),
+            				
+            				createElement('button', { className: '.setTimeBtn', innerText: 'Ingresar Hora de Salida' })] });
             
             contentDiv.innerHTML += todayVisitorDiv.outerHTML;
             // doc.data() is never undefined for query doc snapshots
@@ -88,3 +115,6 @@ const getTodayVisitors = (getDate) => {
         console.log("Error getting documents: ", error);
     });
 };
+
+const setTimeBtn = document.querySelector('.setTimeBtn');
+console.log(setTimeBtn);

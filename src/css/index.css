@@ -79,12 +79,12 @@ button {
 }
 
 .takePhotoBtn {
-	background:url(https://claudiagarfias.works/laboratoria/sharedimages/cameraicon.png) no-repeat;
-	cursor:pointer;
-    border:none;
+	background:url(https://claudiagarfias.works/contents/uploads/media/cameraicon.png) no-repeat;
+	cursor: pointer;
+    border: none;
     width: 65px !important;
     height: 65px;
-    margin: 0 auto;
+    margin: 1.25rem auto;
     position: absolute;
     left: 48%;
 }
@@ -127,11 +127,59 @@ button {
 
 .main-screen-btn:hover {
 	background-color: #31b400;
-	}
-
-@media only screen and (max-width: 1200px) {
-.flex-row-main-screen  {
-	display: block;
 }
 
+.todayVisitorsDivDOM img{
+	max-width: 8rem;
+	border-radius: 50%;
+}
+
+/*table, td {
+
+	  border: 1px solid black;
+  border-collapse: collapse;
+}
+td {
+  padding: 5px;
+}
+*/
+
+table {
+	margin: .5rem auto 0 auto;
+}
+tbody {
+	display: flex;
+		align-items: center;
+	justify-content: flex-start;
+}
+.visitor-table td {
+	padding: .2em .8em;
+	border: 1px solid rgba(16,76,167,0.25);
+	background: rgba(90,156,255,0.25);
+	text-align: left;
+	display: block;
+}
+.left-column-vt {
+	font-weight: 600;
+}
+
+@media only screen and (max-width: 1200px) {
+	.flex-row-main-screen  {
+		display: block;
+		padding: 1rem;
+		text-align: left;
+		margin: .25rem auto .25rem .25rem;
+	}
+
+	.flex-row-main-screen button  {
+		display: block;
+		margin: 1.5rem auto;
+	}
+
+}
+
+@media only screen and (max-width: 500px) {
+	.flex-column-form {
+	margin: 2rem;
+	}
 }
