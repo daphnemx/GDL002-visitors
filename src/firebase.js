@@ -39,6 +39,20 @@ const registerVisit = (getVisitorRegistry) => {
 		});
 };
 
+const registerCoworker = (getCoworkerRegistry) => {
+    db.collection("coworkersLog").add(coworkerRegistry)
+        .then((docRef) => {
+            lastRegistryId = docRef.id;
+            console.log("Document written with ID: ", lastRegistryId, coworkerRegistry);
+            })
+        .then(() => {
+            const returnBtn = document.querySelector('.getCoworkers');
+            returnBtn.addEventListener('click', () => {location.reload(true)})})
+        .catch((error) => {
+            console.error("Error adding document: ", error);
+        });
+};
+
 // var docRef = db.collection("visitorsLog").doc(lastRegistryId);
 const getLastRegistry = () => {
 	db.collection("visitorsLog").doc(lastRegistryId).get().then(function(doc) {
@@ -61,6 +75,7 @@ const getTodayVisitors = (getDate) => {
     .get()
     .then(function(querySnapshot) {
         querySnapshot.forEach(function(doc) {
+            
 
         	let todayVisitorDiv = createElement('div',
                 { className: 'visitor-div-container', children: 
@@ -102,14 +117,12 @@ const getTodayVisitors = (getDate) => {
         querySnapshot.forEach(function(doc) {
             let id = doc.id;
             let visitorDiv = document.getElementById(`visitorDiv:${doc.id}`);
-            if (visitorDiv) {
-            const setTimeBtn = document.querySelector('.setTimeBtn');
-            setTimeBtn.addEventListener('click', ()=>{
+            
+            const setExitTime = ()=> {
                 let setExitTime = db.collection('visitorsLog').doc(id);
                 return setExitTime.update({
                     visitExitTime: getTime()
-                })
-                                    .then(function() {
+                }).then(function() {
                         console.log("Document successfully updated!");
                         location.reload();
                     })
@@ -117,36 +130,14 @@ const getTodayVisitors = (getDate) => {
                         // The document probably doesn't exist.
                         console.error("Error updating document: ", error);
                     });
-
-            })
             }
 
-            // const setExitTime = () => {
-            //     let id = document.querySelector('#doc-id').innerText;
-            //     let setWithMerge = db.collection('visitorsLog').doc(id).set({
-            //         visitExitTime: getTime()
-            //     }, { merge: true });
+            const setTimeBtn = document.querySelector('.setTimeBtn');
+            setTimeBtn.addEventListener('click', setExitTime)
 
-            // // }
-            
-            // setTimeBtn.addEventListener('click', setExitTime)
-            // doc.data() is never undefined for query doc snapshots
-            // console.log(doc.id, " => ", doc.data());
-            // const id = doc.id;
-
-            
-
-
-
-
-            // console.log(id);
 
         });
-        
     })
-        
-
-
     .catch(function(error) {
         console.log("Error getting documents: ", error);
     });

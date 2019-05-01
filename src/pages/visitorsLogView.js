@@ -39,7 +39,7 @@ const loadPhotoDiv = createElement('div', {
 
 const registerBtn = createElement('button', { innerText: 'Registrarse', className: 'registerBtn' });
 
-const contentDivAdd = document.getElementById('root');
+let contentDivAdd = document.getElementById('root');
 
 const loadPhotoAndRegistryBtn = () => { 
 	contentDivAdd.innerHTML += loadPhotoDiv.outerHTML + registerBtn.outerHTML;

@@ -17,6 +17,14 @@ else if (location.hash === '#visitors') {
 	loadPhotoAndRegistryBtn();
 }
 
+//	//// COWORKERS SCREEN //// //
+else if (location.hash === '#coworkers') {
+	contentDiv.innerHTML = coworkersLogView().outerHTML;
+	loadRegisterCoworker();
+	cancelCoworkerRegistry();
+
+}
+
 // //// ADMINISTRATION SCREEN //// //
 else if (location.hash === '#admin') {
 	contentDiv.style.display = "block";
@@ -30,10 +38,6 @@ else if (location.hash === '#admin') {
 else if (location.hash === '#confirmed-visitor') {
 	contentDiv.innerHTML = logConfirmedView().outerHTML;
 			// getLastRegistry();
-}
-
-else if (location.hash === '#coworkers') {
-	contentDiv.innerHTML = '';
 }
 
 window.onpopstate = (event) => {
