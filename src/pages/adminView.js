@@ -1,7 +1,8 @@
 const adminNav = () => {	
 	const nav = createElement('nav', {
 		className: 'admin-nav',
-		children: [createElement('a', { innerText: ' Visitantes de Hoy |', href: '#admin' }),
+		children: [createElement('a', { innerText: ' Inicio |', href: '' }),
+		createElement('a', { innerText: ' Visitantes de Hoy |', href: '#admin' }),
 		createElement('a', { innerText: ' Registrar Coworker |', href: '#coworkers' }),
 		createElement('a', { innerText: ' Registrar Visitante |', href: '#visitors' }),
 		createElement('a', { innerText: ' Estadísticas ', href: '#' })],

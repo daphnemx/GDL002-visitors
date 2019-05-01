@@ -129,20 +129,25 @@ button {
 	background-color: #31b400;
 }
 
+
+.visitor-div-container {
+display: inline-block;
+
+}
+
+.todayVisitorsDivDOM {
+	margin: 1.25rem;
+}
+
 .todayVisitorsDivDOM img{
 	max-width: 8rem;
 	border-radius: 50%;
 }
 
-/*table, td {
+.todayVisitorsDivDOM button {
+	margin-top: 0.25rem;
+}
 
-	  border: 1px solid black;
-  border-collapse: collapse;
-}
-td {
-  padding: 5px;
-}
-*/
 
 table {
 	margin: .5rem auto 0 auto;
@@ -154,6 +159,7 @@ tbody {
 }
 .visitor-table td {
 	padding: .2em .8em;
+	height: 1.75rem;
 	border: 1px solid rgba(16,76,167,0.25);
 	background: rgba(90,156,255,0.25);
 	text-align: left;

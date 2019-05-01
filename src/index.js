@@ -3,11 +3,12 @@ contentDiv.classList.add('flex-column-log');
 
 // //// MAIN SCREEN //// //
 if (location.hash === '') {
+	
 	contentDiv.innerHTML = backgroundVid.outerHTML + mainView().outerHTML;
-
+	document.querySelector('.getAdmin').addEventListener('click', () => {window.location = '#admin'});
 	document.querySelector('.getVisitors').addEventListener('click', () => {window.location = '#visitors'});
 	document.querySelector('.getCoworkers').addEventListener('click', () => {window.location = '#coworkers'});
-	document.querySelector('.getAdmin').addEventListener('click', () => {window.location = '#admin'});
+
 }
 
 //	//// VISITORS SCREEN //// //
@@ -18,6 +19,7 @@ else if (location.hash === '#visitors') {
 
 // //// ADMINISTRATION SCREEN //// //
 else if (location.hash === '#admin') {
+	contentDiv.style.display = "block";
 	contentDiv.innerHTML = adminNav().outerHTML + adminTitle().outerHTML;
 	getTodayVisitors(getDate);
 	// contentDiv =+ todayVisitorsDiv().outerHTML;

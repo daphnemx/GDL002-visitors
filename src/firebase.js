@@ -62,59 +62,116 @@ const getTodayVisitors = (getDate) => {
     .then(function(querySnapshot) {
         querySnapshot.forEach(function(doc) {
 
-        	let todayVisitorDiv = createElement('div', { 
-            className: 'todayVisitorsDivDOM',
-            	children: [ createElement('img', { src: `${doc.data().visitPhoto}` }),
-                            
-                        createElement('table', { className: 'visitor-table', children:
-                        [createElement('tr', { className:'left-column-vt', children:
-                            [createElement('td', {innerText: 'ID:'}),
-                            createElement('td', {innerText: 'Fecha:'}),
-                            createElement('td', {innerText: 'Hora de ingreso:'}),
-                            createElement('td', {innerText: 'Hora de salida:'}),
-                            createElement('td', {innerText: 'Nombre del Visitante:'}),
-                            createElement('td', {innerText: 'Email:'}),
-                            createElement('td', {innerText: 'Empresa u Organización:'}),
-                            createElement('td', {innerText: 'Anfitrión:'}),
-                            createElement('td', {innerText: 'Tiempo de visita seleccionado:'}),
-                            createElement('td', {innerText: 'Comentarios:'})] }),
+        	let todayVisitorDiv = createElement('div',
+                { className: 'visitor-div-container', children: 
+                [createElement('div', { id: `visitorDiv:${doc.id}`,className: 'todayVisitorsDivDOM',
+                        children: [ createElement('img', { src: `${doc.data().visitPhoto}` }),
+                                    createElement('table', { className: 'visitor-table', 
+                                        children:[createElement('tr', { className:'left-column-vt', 
+                                                children:[createElement('td', { innerText: 'ID:' }),
+                                                    createElement('td', { innerText: 'Fecha:' }),
+                                                    createElement('td', { innerText: 'Hora de ingreso:' }),
+                                                    createElement('td', { innerText: 'Hora de salida:' }),
+                                                    createElement('td', { innerText: 'Nombre del Visitante:' }),
+                                                    createElement('td', { innerText: 'Email:' }),
+                                                    createElement('td', { innerText: 'Empresa u Organización:' }),
+                                                    createElement('td', { innerText: 'Anfitrión:' }),
+                                                    createElement('td', { innerText: 'Tiempo de visita seleccionado:' }),
+                                                    createElement('td', { innerText: 'Comentarios:'})] }),
+                                                createElement('tr', { className:'right-column-vt', 
+                                                children:[createElement('td', { innerText: `${doc.id}` }),
+                                                    createElement('td', { innerText: `${doc.data().date}` }),
+                                                    createElement('td', { innerText: `${doc.data().time}` }),
+                                                    createElement('td', { innerText: `${doc.data().visitExitTime}` }),
+                                                    createElement('td', { innerText: `${doc.data().visitName}` }),
+                                                    createElement('td', { innerText: `${doc.data().visitEmail}` }),
+                                                    createElement('td', { innerText: `${doc.data().visitCompany }`}),
+                                                    createElement('td', { innerText: `${doc.data().visitHost}` }),
+                                                    createElement('td', { innerText: `${doc.data().visitMaxTime}` }),
+                                                    createElement('td', { innerText: `${doc.data().visitComments}` })] })] }),
+                                    createElement('button', { className: 'setTimeBtn', innerText: 'Ingresar Hora de Salida' })] })
+                ] });
 
-                        createElement('tr', { className:'right-column-vt', children:
-                            [createElement('td', {innerText: `${doc.id}`}),
-                            createElement('td', {innerText: `${doc.data().date}`}),
-                            createElement('td', {innerText: `${doc.data().time}`}),
-                            createElement('td', {innerText: `Pendiente`}),
-                            createElement('td', {innerText: `${doc.data().visitName}`}),
-                            createElement('td', {innerText: `${doc.data().visitEmail}`}),
-                            createElement('td', {innerText: `${doc.data().visitCompany}`}),
-                            createElement('td', {innerText: `${doc.data().visitHost}`}),
-                            createElement('td', {innerText: `${doc.data().visitMaxTime}`}),
-                            createElement('td', {innerText: `${doc.data().visitComments}`})] })
-                        ] }),
-                        //     createElement('p', { innerText: `ID: ${doc.id}
-            												// Nombre del visitante: ${doc.data().visitName}
-            												// Fecha: ${doc.data().date}
-            												// Hora de Ingreso: ${doc.data().time}
-            												// Email: ${doc.data().visitEmail}
-            												// Empresa u Organización: ${doc.data().visitCompany}
-            												// Anfitrión: ${doc.data().visitHost}
-            												// Tiempo de visita registrado: ${doc.data().visitMaxTime}
-            												// Comentarios: ${doc.data().visitComments}` }),
-            				
-            				createElement('button', { className: '.setTimeBtn', innerText: 'Ingresar Hora de Salida' })] });
-            
             contentDiv.innerHTML += todayVisitorDiv.outerHTML;
             // doc.data() is never undefined for query doc snapshots
-            // todayVisitorsObj.id = doc.id;
-            // todayVisitorsObj.data = doc.data();
-            // visitorPhotoDOM.src = doc.data().visitPhoto;
-            console.log(doc.id, " => ", doc.data());
+            // console.log(doc.id, " => ", doc.data());
+
+
         });
+
+        querySnapshot.forEach(function(doc) {
+            let id = doc.id;
+            let visitorDiv = document.getElementById(`visitorDiv:${doc.id}`);
+            if (visitorDiv) {
+            const setTimeBtn = document.querySelector('.setTimeBtn');
+            setTimeBtn.addEventListener('click', ()=>{
+                let setExitTime = db.collection('visitorsLog').doc(id);
+                return setExitTime.update({
+                    visitExitTime: getTime()
+                })
+                                    .then(function() {
+                        console.log("Document successfully updated!");
+                        location.reload();
+                    })
+                    .catch(function(error) {
+                        // The document probably doesn't exist.
+                        console.error("Error updating document: ", error);
+                    });
+
+            })
+            }
+
+            // const setExitTime = () => {
+            //     let id = document.querySelector('#doc-id').innerText;
+            //     let setWithMerge = db.collection('visitorsLog').doc(id).set({
+            //         visitExitTime: getTime()
+            //     }, { merge: true });
+
+            // // }
+            
+            // setTimeBtn.addEventListener('click', setExitTime)
+            // doc.data() is never undefined for query doc snapshots
+            // console.log(doc.id, " => ", doc.data());
+            // const id = doc.id;
+
+            
+
+
+
+
+            // console.log(id);
+
+        });
+        
     })
+        
+
+
     .catch(function(error) {
         console.log("Error getting documents: ", error);
     });
 };
 
-const setTimeBtn = document.querySelector('.setTimeBtn');
-console.log(setTimeBtn);
+
+// const setExitTime = () => {
+//     db.collection("visitorsLog").where("date", `==`, `${getDate()}`)
+//     .get()
+//     .then(function(querySnapshot) {
+//         querySnapshot.forEach(function(doc) {
+//             // doc.data() is never undefined for query doc snapshots
+//             // console.log(doc.id, " => ", doc.data());
+//             // const id = doc.id;
+//             var setWithMerge = db.collection('visitorsLog').doc(doc.id).set({
+//                 visitExitTime: getTime()
+//             }, { merge: true });
+
+//             // console.log(id);
+
+//         });
+//     })
+//     .catch(function(error) {
+//         console.log("Error getting documents: ", error);
+//     });
+
+
+// }
