@@ -1,4 +1,7 @@
-# Registro de Visitantes
+# EASYLOG: Registro de Visitantes Hecho Fácil
+
+<h3>ATENCIÓN:</h3> 
+**Requisitos del navegador:** Mozilla Firefox Quantum v. 66.0.3 (64-bit) o superior.
 
 ##Historias de usuario
 
