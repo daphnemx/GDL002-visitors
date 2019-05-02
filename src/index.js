@@ -20,7 +20,7 @@ else if (location.hash === '#visitors') {
 
 //	//// COWORKERS SCREEN //// //
 else if (location.hash === '#coworkers') {
-	contentDiv.innerHTML = coworkersLogView().outerHTML;
+	contentDiv.innerHTML = mainHeader().outerHTML + coworkersLogView().outerHTML;
 	loadRegisterCoworker();
 	cancelCoworkerRegistry();
 

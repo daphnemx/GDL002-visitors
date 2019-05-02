@@ -83,7 +83,7 @@ a{
 .flex-column-form {
     display: flex;
 	flex-direction: column;
-	margin: 5rem auto;
+	margin: 5rem auto 0rem;
 }
 
 .flex-column-form label {
@@ -103,6 +103,18 @@ a{
 	flex-direction: column;
 /*	margin: 2% 38%;
 */	text-align: center;
+}
+
+select {
+	-webkit-appearance: none;
+	background-color: #ffff;
+	background: url('https://claudiagarfias.works/contents/uploads/media/select-arrow.png') no-repeat right #fff;
+	border-radius: 2px;
+	border: 1px solid #868a85;
+	font-size: .9rem;
+	font-weight: 200;
+	padding: .5rem 3.5rem .5rem .65rem;
+	text-align: left;
 }
 
 button {
@@ -224,10 +236,15 @@ tbody {
 .visitor-table td {
 	padding: .2em .8em;
 	height: 1.75rem;
-	border: 1px solid #2c9b03;
+	border-bottom: 1px solid #2c9b03;
 	text-align: left;
 	display: block;
 }
+
+.right-column-vt td {
+	border-left: 1px solid #2c9b03;
+}
+
 .left-column-vt {
 	font-weight: 600;
 }
