@@ -4,14 +4,18 @@ const mainView = () => {
 	// const logoSection = createElement('section', { className: 'logo-section',Z children: [
 	// 	createElement('h1', { innerText: 'Registro de Visitantes' })
 	// 	], });
-	const menuSection = createElement('section', { className: 'flex-row-main-screen', children: [
-		createElement('button', { innerText: 'Administración', className: 'getAdmin main-screen-btn' }),
-		createElement('button', { innerText: 'Registrar Visitantes', className: 'getVisitors main-screen-btn' }),
-		createElement('button', { innerText: 'Registrar Coworkers', className: 'getCoworkers main-screen-btn' })
+	const menuSection = createElement('section', { className: 'main-section', children: [
+		createElement('div', { className: 'logo-section', children: [
+		createElement('img', { className: 'main-logo', src:'http://claudiagarfias.works/contents/uploads/media/easylog.png' })] }),
+		createElement('div', {className: 'main-buttons flex-row-main-screen', children:[
+			createElement('button', { innerText: 'Administración', className: 'getAdmin main-screen-btn' }),
+			createElement('button', { innerText: 'Registrar Visitantes', className: 'getVisitors main-screen-btn' }),
+			createElement('button', { innerText: 'Registrar Coworkers', className: 'getCoworkers main-screen-btn' })
+			]})
+		
 		], });
 	// backgroundVid.playbackRate = .25;
 
 	return menuSection;
 
 }
-

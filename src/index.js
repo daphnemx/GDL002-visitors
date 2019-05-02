@@ -4,6 +4,7 @@ contentDiv.classList.add('flex-column-log');
 // //// MAIN SCREEN //// //
 if (location.hash === '') {
 	
+	contentDiv.style.display = "block";
 	contentDiv.innerHTML = backgroundVid.outerHTML + mainView().outerHTML;
 	document.querySelector('.getAdmin').addEventListener('click', () => {window.location = '#admin'});
 	document.querySelector('.getVisitors').addEventListener('click', () => {window.location = '#visitors'});
@@ -42,5 +43,5 @@ else if (location.hash === '#confirmed-visitor') {
 
 window.onpopstate = (event) => {
   console.log("location: " + document.location + ", state: " + JSON.stringify(event.state));
-  window.location.reload();
+  window.location.reload(true);
 };
