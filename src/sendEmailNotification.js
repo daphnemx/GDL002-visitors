@@ -5,8 +5,8 @@ const sendEmailNotification = () => {
     From : "apps@claudiagarfias.works",
     Subject : `Tu invitado ${visitRegistry.visitName} acaba de llegar al Coworking 🙋🏢`,
     Body : `¡Hola ${visitRegistry.visitHost}!<br><br>
-            ${visitRegistry.visitName} ya está en el lobby. ¡No lo hagas esperar demasiado! 🙂<br><br>
-            Mensaje de tu invitado: "${visitRegistry.visitComments}".<br><br>
+            ${visitRegistry.visitName} ya está en el lobby. ¡No lo hagas esperar demasiado! 🙂<br>
+            Mensaje de tu invitado: "${visitRegistry.visitComments}".<br>
             El tiempo máximo para esta visita es: ${visitRegistry.visitMaxTime} hrs, por favor recuerda avisar al lobby cuando tu reunión haya terminado.<br><br>
             Gracias, saludos del equipo del Coworking.`
     })

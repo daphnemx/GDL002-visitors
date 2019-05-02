@@ -9,36 +9,22 @@ const visitorsLogView = () => {
 				createElement('input', { className: 'visitEmail' }),
 				createElement('label', { innerText: 'Empresa u Organización a la que Pertences:' }),
 				createElement('input', { className: 'visitCompany' }),
-				
-
 				createElement('div', { className: 'selects', children:[
-createElement('div', { className: 'left-select', children: [
-	createElement('label', { innerText: '¿Quién es tu anfitrión?' }),
-					createElement('select', { className: 'visitHost', children:
-					[createElement('option', { value: '', innerText: 'Elige:' }),
-					createElement('option', { value: 'patriciaga@protonmail.com', innerText: 'Patricia Garfias' }),
-					createElement('option', { value: 'stuff@claudiagarfias.works', innerText: 'Otro Coworker' })] })
-	] }),
-
-createElement('div', { children: [
-createElement('label', { innerText: 'Tiempo de Visita Máx:' }),
-				createElement('select', { className: 'visitMaxTime', children:
-					[createElement('option', { value: '00:30', innerText: '00:30 min' }),
-					createElement('option', { value: '01:00', innerText: '01:00 hrs' }),
-					createElement('option', { value: '01:30', innerText: '01:30 hrs' }),
-					createElement('option', { value: '02:00', innerText: '02:00 hrs' }),
-					createElement('option', { value: '02:30', innerText: '02:30 hrs' }),
-					createElement('option', { value: '03:00', innerText: '03:00 hrs' })] })
-	] })
-
-
-				
-
-					]}),
-
-				
-
-
+					createElement('div', { className: 'left-select', children: [
+						createElement('label', { innerText: '¿Quién es tu anfitrión?' }),
+						createElement('select', { className: 'visitHost', children:[
+							createElement('option', { value: '', innerText: 'Elige:' }),
+							createElement('option', { value: 'patriciaga@protonmail.com', innerText: 'Patricia Garfias' }),
+							createElement('option', { value: 'stuff@claudiagarfias.works', innerText: 'Otro Coworker' })] })] }),
+					createElement('div', { children: [
+						createElement('label', { innerText: 'Tiempo de Visita Máx:' }),
+						createElement('select', { className: 'visitMaxTime', children:[
+							createElement('option', { value: '00:30', innerText: '00:30 min' }),
+							createElement('option', { value: '01:00', innerText: '01:00 hrs' }),
+							createElement('option', { value: '01:30', innerText: '01:30 hrs' }),
+							createElement('option', { value: '02:00', innerText: '02:00 hrs' }),
+							createElement('option', { value: '02:30', innerText: '02:30 hrs' }),
+							createElement('option', { value: '03:00', innerText: '03:00 hrs' })] })] })]}),
 				createElement('label', { innerText: 'Comentarios:' }),
 				createElement('input', { className: 'visitComments' })],
 		});
