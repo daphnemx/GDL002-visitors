@@ -75,7 +75,7 @@ a{
 
 .main-logo {
 	margin-top: 10rem;
-	max-width: 27.5rem;
+	max-width: 30rem;
 }
 .flex-column-form {
     display: flex;
@@ -217,7 +217,6 @@ button {
 	position: fixed;
 	min-width: 100%;
 	min-height: 100%;
-	filter: brightness(.7);
 	right: 0;
 	bottom: 0
 }
