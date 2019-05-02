@@ -24,15 +24,12 @@ a{
 	text-decoration: none;
 }
 
-.admin-title {
-	padding-top: 5rem;
-}
 .main-header {
 	background-color: black;
 	height: 4rem;
 	padding: .65rem;
-	position: fixed;
-	width: 100%;
+/*	position: fixed;
+*/	width: 100%;
 	margin-bottom: 3rem;
 	display: flex;
 	justify-content: flex-start;
@@ -83,7 +80,7 @@ a{
 .flex-column-form {
     display: flex;
 	flex-direction: column;
-	margin: 5rem auto 0rem;
+	margin: 0 auto 0rem;
 }
 
 .flex-column-form label {
@@ -101,20 +98,34 @@ a{
 .flex-column-log {
     display: flex;
 	flex-direction: column;
-/*	margin: 2% 38%;
-*/	text-align: center;
+	text-align: center;
 }
 
 select {
 	-webkit-appearance: none;
 	background-color: #ffff;
+	background-position: left !important;
 	background: url('https://claudiagarfias.works/contents/uploads/media/select-arrow.png') no-repeat right #fff;
-	border-radius: 2px;
-	border: 1px solid #868a85;
+	border:  1px solid #aaa6a6;;
 	font-size: .9rem;
 	font-weight: 200;
-	padding: .5rem 3.5rem .5rem .65rem;
+	padding: .5rem 3.5rem .5rem 2.25rem;
 	text-align: left;
+	margin: 0 auto 1rem 0;
+	width: 100%;
+	display:block;
+}
+
+.selects {
+	display: flex;
+}
+
+.left-select {
+	margin-right: 1rem;
+}
+
+.selects label {
+	display: block;
 }
 
 button {
@@ -172,19 +183,16 @@ button {
 }
 
 .flex-row-main-screen {
-/*	width: 100%;
-	height: 100%;*/
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	position: fixed;
 	color: #ffff;
-/*	background-color: #0000007a;
-*/	padding: 0 20%;
+	padding: 0 20%;
 }
 
 input {
-	border: 1px solid #2c9b03;
+	border: 1px solid #aaa6a6;;
 	height: 3rem;
 
 border-radius: .35rem;
@@ -276,5 +284,13 @@ tbody {
 @media only screen and (max-width: 500px) {
 	.flex-column-form {
 	margin: 2rem;
+	}
+
+	.selects {
+		display: block;
+	}
+
+	.left-select {
+		margin:auto;
 	}
 }
