@@ -11,8 +11,13 @@ const coworkersLogView = () => {
 				createElement('input', { className: 'coworkerCompany' }),
 				createElement('label', { innerText: 'Comentarios:' }),
 				createElement('input', { className: 'coworkerComments' }),
-				createElement('button', { innerText: 'Registrar Coworker', className: 'registerCoworkerBtn' }),
-				createElement('button', { innerText: 'Cancelar', className: 'cancelRegistryBtn' })]	});
+
+				createElement('div', { className: 'coworkers-btns', children: [
+					createElement('button', { innerText: 'Registrar Coworker', className: 'registerCoworkerBtn green-button' }),
+				createElement('button', { innerText: 'Cancelar', className: 'cancelRegistryBtn green-button' })
+					] })
+
+				]	});
 	return form;
 };
 

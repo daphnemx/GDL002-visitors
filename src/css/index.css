@@ -113,8 +113,20 @@ a{
 }
 
 .green-button:hover {
-	background-color: #42ab02;
-
+	background-color: #000;
+	transform: translateY(-0.15rem);
+	transition: 0.45s;
+}
+.registerCoworkerBtn {
+	margin-right: 1rem;
+}
+.registerCoworkerBtn, .cancelRegistryBtn {
+	width: 12rem;
+	display: inline-block;
+	margin-bottom: 5rem ;
+}
+.cancelRegistryBtn:hover {
+	background-color: red !important;
 }
 
 .registerBtn {

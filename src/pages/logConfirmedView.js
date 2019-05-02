@@ -8,11 +8,11 @@ const logConfirmedView = () => {
 };
 
 const returnToVisitorsBtn = () => {
-	let returnBtn = createElement('button', { innerText: 'Nuevo Registro', className: 'getVisitors' });
+	let returnBtn = createElement('button', { innerText: 'Nuevo Registro', className: 'getVisitors green-button' });
 	return returnBtn;
 }
 
 const returnToCoworkersBtn = () => {
-	let returnBtn = createElement('button', { innerText: 'Nuevo Registro', className: 'getCoworkers' });
+	let returnBtn = createElement('button', { innerText: 'Nuevo Registro', className: 'getCoworkers green-button' });
 	return returnBtn;
 }
