@@ -32,8 +32,14 @@ a{
     color: #ffff;
 }
 
+.main-section h2 {
+	font-size: 1.65rem;
+	margin-top: -.25rem;
+	letter-spacing: .45rem;
+}
+
 .main-logo {
-	margin-top: 12rem;
+	margin-top: 10rem;
 	max-width: 27.5rem;
 }
 .flex-column-form {
