@@ -133,6 +133,12 @@ button {
 */	padding: 0 20%;
 }
 
+input {
+	border: 1px solid #2c9b03;
+	height: 3rem;
+
+border-radius: .35rem;
+}
 .main-screen-btn {
 	border-radius: .35rem;
 	font-size: .9rem;
@@ -180,8 +186,7 @@ tbody {
 .visitor-table td {
 	padding: .2em .8em;
 	height: 1.75rem;
-	border: 1px solid rgba(16,76,167,0.25);
-	background: rgba(90,156,255,0.25);
+	border: 1px solid #2c9b03;
 	text-align: left;
 	display: block;
 }
