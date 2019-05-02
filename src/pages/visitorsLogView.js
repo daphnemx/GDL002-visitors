@@ -54,7 +54,7 @@ const loadPhotoDiv = createElement('div', {
 			createElement('canvas', { width: '480', height: '480', className: 'canvas' })],
 });
 
-const registerBtn = createElement('button', { innerText: 'Registrarse', className: 'registerBtn' });
+const registerBtn = createElement('button', { innerText: 'Registrarse', className: 'registerBtn green-button' });
 
 let contentDivAdd = document.getElementById('root');
 

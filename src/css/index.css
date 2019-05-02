@@ -81,6 +81,7 @@ a{
     display: flex;
 	flex-direction: column;
 	margin: 0 auto 0rem;
+	width: 30rem;
 }
 
 .flex-column-form label {
@@ -100,7 +101,25 @@ a{
 	flex-direction: column;
 	text-align: center;
 }
+.green-button {
+	background-color: #1d9000;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border: none;
+	padding: .5rem 1.5rem;
+	border-radius: 3px;
+	cursor:pointer;
+	color:#ffffff;
+}
 
+.green-button:hover {
+	background-color: #42ab02;
+
+}
+
+.registerBtn {
+	margin-bottom: 5rem;
+}
 select {
 	-webkit-appearance: none;
 	background-color: #ffff;
@@ -278,9 +297,28 @@ tbody {
 	}
 
 	.main-logo {
+		margin-top: 3rem;
 		width: 90%;
 	}
 
+	.main-screen-btn {
+		max-width: 80%;
+	}
+
+	.flex-column-form {
+		width: auto;
+	}
+
+}
+
+@media only screen and (max-width: 900px) {
+	.main-section {
+		  background: url('https://claudiagarfias.works/contents/uploads/media/architectural-design-architecture-buildings-936722.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+	}
 }
 
 @media only screen and (max-width: 500px) {
@@ -294,5 +332,9 @@ tbody {
 
 	.left-select {
 		margin:auto;
+	}
+
+	.background-vid {
+		display: none;
 	}
 }
