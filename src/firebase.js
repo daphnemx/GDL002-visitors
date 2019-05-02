@@ -104,7 +104,7 @@ const getTodayVisitors = (getDate) => {
                                                     createElement('td', { innerText: `${doc.data().visitHost}` }),
                                                     createElement('td', { innerText: `${doc.data().visitMaxTime}` }),
                                                     createElement('td', { innerText: `${doc.data().visitComments}` })] })] }),
-                                    createElement('button', { className: 'setTimeBtn', innerText: 'Ingresar Hora de Salida' })] })
+                                    createElement('button', { className: 'setTimeBtn green-button', innerText: 'Ingresar Hora de Salida' })] })
                 ] });
 
             contentDiv.innerHTML += todayVisitorDiv.outerHTML;
