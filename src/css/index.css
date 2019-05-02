@@ -132,6 +132,15 @@ a{
 .registerBtn {
 	margin-bottom: 5rem;
 }
+.openCameraBtn {
+	border-radius: 5rem;
+	background-color: #000;
+}
+
+.openCameraBtn:hover {
+	background-color: #145f01;
+}
+
 select {
 	-webkit-appearance: none;
 	background-color: #ffff;
