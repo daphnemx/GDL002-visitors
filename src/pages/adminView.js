@@ -10,7 +10,7 @@ const adminNav = () => {
 	return nav;
 };
 const adminTitle = () => {
-	const title = createElement('h1', {innerText: `Registro de hoy: ${getDate()}`});
+	const title = createElement('h1', {className: 'admin-title', innerText: `Registro de hoy: ${getDate()}`});
 	return title
 };
 

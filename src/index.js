@@ -3,7 +3,7 @@ contentDiv.classList.add('flex-column-log');
 
 // //// MAIN SCREEN //// //
 if (location.hash === '') {
-	
+
 	contentDiv.style.display = "block";
 	contentDiv.innerHTML = backgroundVid.outerHTML + mainView().outerHTML;
 	document.querySelector('.getAdmin').addEventListener('click', () => {window.location = '#admin'});
@@ -14,7 +14,7 @@ if (location.hash === '') {
 
 //	//// VISITORS SCREEN //// //
 else if (location.hash === '#visitors') {
-	contentDiv.innerHTML = visitorsLogView().outerHTML;
+	contentDiv.innerHTML = mainHeader().outerHTML + visitorsLogView().outerHTML;
 	loadPhotoAndRegistryBtn();
 }
 
@@ -28,8 +28,11 @@ else if (location.hash === '#coworkers') {
 
 // //// ADMINISTRATION SCREEN //// //
 else if (location.hash === '#admin') {
+	const header =  mainHeader();
+	header.appendChild(adminNav());
+	contentDiv.innerHTML = header.outerHTML;
 	contentDiv.style.display = "block";
-	contentDiv.innerHTML = adminNav().outerHTML + adminTitle().outerHTML;
+	contentDiv.innerHTML += adminTitle().outerHTML;
 	getTodayVisitors(getDate);
 	// contentDiv =+ todayVisitorsDiv().outerHTML;
 

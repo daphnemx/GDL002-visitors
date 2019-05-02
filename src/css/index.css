@@ -24,6 +24,44 @@ a{
 	text-decoration: none;
 }
 
+.admin-title {
+	padding-top: 5rem;
+}
+.main-header {
+	background-color: black;
+	height: 4rem;
+	padding: .65rem;
+	position: fixed;
+	width: 100%;
+	margin-bottom: 3rem;
+	display: flex;
+	justify-content: flex-start;
+	align-content: flex-end;
+}
+
+.main-header nav {
+	align-self: flex-end;
+	margin-left: 3rem;
+	margin-bottom: .25rem;
+}
+
+.main-header a {
+	color: #ffff;
+}
+
+.main-header a:hover {
+	color: #31b400;
+}
+
+.main-header a {
+	width: 10rem;
+}
+
+.main-header img {
+	margin-left: 1rem;
+	width: 10rem;
+}
+
 .main-section {
 	background-color: #0000007a;
     width: 100%;
@@ -45,7 +83,7 @@ a{
 .flex-column-form {
     display: flex;
 	flex-direction: column;
-	margin: 0 auto;
+	margin: 5rem auto;
 }
 
 .flex-column-form label {
