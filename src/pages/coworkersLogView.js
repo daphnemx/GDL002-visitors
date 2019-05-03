@@ -44,7 +44,7 @@ const loadRegisterCoworker = () => {
 		console.log('que onda')
 		getCoworkerRegistry();
 		registerCoworker(getCoworkerRegistry);
-		contentDiv.innerHTML = logConfirmedView().outerHTML + returnToCoworkersBtn().outerHTML;
+		contentDiv.innerHTML = mainHeader().outerHTML + logConfirmedView().outerHTML + returnToCoworkersBtn().outerHTML;
 	});
 }
 

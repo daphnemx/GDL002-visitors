@@ -1,10 +1,10 @@
 firebase.initializeApp({
-	apiKey: "AIzaSyATd_NEeul67on2O3YhMTmgVmjFmKtYKm8",
-	authDomain: "visitors-registration.firebaseapp.com",
-	databaseURL: "https://visitors-registration.firebaseio.com",
-	projectId: "visitors-registration",
-	storageBucket: "visitors-registration.appspot.com",
-	messagingSenderId: "573685055395"
+    apiKey: "AIzaSyATd_NEeul67on2O3YhMTmgVmjFmKtYKm8",
+    authDomain: "visitors-registration.firebaseapp.com",
+    databaseURL: "https://visitors-registration.firebaseio.com",
+    projectId: "visitors-registration",
+    storageBucket: "visitors-registration.appspot.com",
+    messagingSenderId: "573685055395"
 });
 
 const getDate =()=> {
@@ -26,17 +26,17 @@ const db = firebase.firestore();
 let lastRegistryId = '';
 
 const registerVisit = (getVisitorRegistry) => {
-	db.collection("visitorsLog").add(visitRegistry)
-		.then((docRef) => {
-		    lastRegistryId = docRef.id;
-		    console.log("Document written with ID: ", lastRegistryId, visitRegistry);
-		    sendEmailNotification()})
-		.then(() => {
-			const returnBtn = document.querySelector('.getVisitors');
-			returnBtn.addEventListener('click', () => {location.reload(true)})})
-		.catch((error) => {
-		    console.error("Error adding document: ", error);
-		});
+    db.collection("visitorsLog").add(visitRegistry)
+        .then((docRef) => {
+            lastRegistryId = docRef.id;
+            console.log("Document written with ID: ", lastRegistryId, visitRegistry);
+            sendEmailNotification()})
+        .then(() => {
+            const returnBtn = document.querySelector('.getVisitors');
+            returnBtn.addEventListener('click', () => {location.reload(true)})})
+        .catch((error) => {
+            console.error("Error adding document: ", error);
+        });
 };
 
 const registerCoworker = (getCoworkerRegistry) => {
@@ -55,29 +55,29 @@ const registerCoworker = (getCoworkerRegistry) => {
 
 // var docRef = db.collection("visitorsLog").doc(lastRegistryId);
 const getLastRegistry = () => {
-	db.collection("visitorsLog").doc(lastRegistryId).get().then(function(doc) {
-	    if (doc.exists) {
-	        console.log("Document data:", doc.data());
-	    } else {
-	        // doc.data() will be undefined in this case
-	        console.log("No such document!");
-	    }
-	}).catch(function(error) {
-	    console.log("Error getting document:", error);
-	});
+    db.collection("visitorsLog").doc(lastRegistryId).get().then(function(doc) {
+        if (doc.exists) {
+            console.log("Document data:", doc.data());
+        } else {
+            // doc.data() will be undefined in this case
+            console.log("No such document!");
+        }
+    }).catch(function(error) {
+        console.log("Error getting document:", error);
+    });
 }
 
 let todayVisitorsObj = {};
 // const visitorPhotoDOM = document.querySelector('.visitorPhotoDOM');
 
 const getTodayVisitors = (getDate) => {
-	db.collection("visitorsLog").where("date", `==`, `${getDate()}`)
+    db.collection("visitorsLog").where("date", `==`, `${getDate()}`)
     .get()
     .then(function(querySnapshot) {
         querySnapshot.forEach(function(doc) {
             
 
-        	let todayVisitorDiv = createElement('div',
+            let todayVisitorDiv = createElement('div',
                 { className: 'visitor-div-container', children: 
                 [createElement('div', { id: `visitorDiv:${doc.id}`,className: 'todayVisitorsDivDOM',
                         children: [ createElement('img', { src: `${doc.data().visitPhoto}` }),

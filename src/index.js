@@ -38,11 +38,11 @@ else if (location.hash === '#admin') {
 
 }
 
-// //// REGISTRY CONFIRMED SCREEN //// //
-else if (location.hash === '#confirmed-visitor') {
-	contentDiv.innerHTML = logConfirmedView().outerHTML;
-			// getLastRegistry();
-}
+// // //// REGISTRY CONFIRMED SCREEN //// //
+// else if (location.hash === '#confirmed-visitor') {
+// 	contentDiv.innerHTML = mainHeader().outerHTML + logConfirmedView().outerHTML;
+// 			// getLastRegistry();
+// }
 
 window.onpopstate = (event) => {
   console.log("location: " + document.location + ", state: " + JSON.stringify(event.state));

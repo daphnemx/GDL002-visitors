@@ -68,6 +68,7 @@ const loadPhotoAndRegistryBtn = () => {
 		        video.play();
 		        takePhotoBtn.style.display = 'block';
 				openCameraBtn.style.display = 'none';
+				loadRegistryBtn.style.visibility = 'hidden';
 		    });
 		}
 	});
@@ -78,6 +79,7 @@ const loadPhotoAndRegistryBtn = () => {
 		photo.src = canvas.toDataURL("image/png");
 		video.style.display = 'none';
 		takePhotoBtn.style.display = 'none';
+		loadRegistryBtn.style.visibility = 'visible';
 
 	});
 
@@ -99,6 +101,6 @@ const loadPhotoAndRegistryBtn = () => {
 	loadRegistryBtn.addEventListener('click', () => {
 		getVisitorRegistry();
 		registerVisit();
-		contentDiv.innerHTML = logConfirmedView().outerHTML + returnToVisitorsBtn().outerHTML;	    
+		contentDiv.innerHTML = mainHeader().outerHTML + logConfirmedView().outerHTML + returnToVisitorsBtn().outerHTML;	    
 	});
 }
