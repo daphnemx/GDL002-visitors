@@ -3,13 +3,11 @@ contentDiv.classList.add('flex-column-log');
 
 // //// MAIN SCREEN //// //
 if (location.hash === '') {
-
 	contentDiv.style.display = "block";
 	contentDiv.innerHTML = backgroundVid.outerHTML + mainView().outerHTML;
 	document.querySelector('.getAdmin').addEventListener('click', () => {window.location = '#admin'});
 	document.querySelector('.getVisitors').addEventListener('click', () => {window.location = '#visitors'});
 	document.querySelector('.getCoworkers').addEventListener('click', () => {window.location = '#coworkers'});
-
 }
 
 //	//// VISITORS SCREEN //// //
@@ -24,7 +22,6 @@ else if (location.hash === '#coworkers') {
 	contentDiv.innerHTML = mainHeader().outerHTML + coworkersLogView().outerHTML;
 	loadRegisterCoworker();
 	cancelCoworkerRegistry();
-
 }
 
 // //// ADMINISTRATION SCREEN //// //
@@ -36,7 +33,6 @@ else if (location.hash === '#admin') {
 	contentDiv.innerHTML += adminTitle().outerHTML;
 	getTodayVisitors(getDate);
 	// contentDiv =+ todayVisitorsDiv().outerHTML;
-
 }
 
 // // //// REGISTRY CONFIRMED SCREEN //// //

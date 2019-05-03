@@ -71,7 +71,8 @@ let todayVisitorsObj = {};
 // const visitorPhotoDOM = document.querySelector('.visitorPhotoDOM');
 
 const getTodayVisitors = (getDate) => {
-    db.collection("visitorsLog").where("date", `==`, `${getDate()}`)
+    db.collection("visitorsLog")
+    .where("date", `==`, `${getDate()}`)
     .get()
     .then(function(querySnapshot) {
         querySnapshot.forEach(function(doc) {
@@ -117,7 +118,6 @@ const getTodayVisitors = (getDate) => {
         querySnapshot.forEach(function(doc) {
             let id = doc.id;
             let visitorDiv = document.getElementById(`visitorDiv:${doc.id}`);
-            
             const setExitTime = ()=> {
                 let setExitTime = db.collection('visitorsLog').doc(id);
                 return setExitTime.update({
@@ -131,11 +131,8 @@ const getTodayVisitors = (getDate) => {
                         console.error("Error updating document: ", error);
                     });
             }
-
-            const setTimeBtn = document.querySelector('.setTimeBtn');
+            const setTimeBtn = visitorDiv.querySelector('.setTimeBtn');
             setTimeBtn.addEventListener('click', setExitTime)
-
-
         });
     })
     .catch(function(error) {
