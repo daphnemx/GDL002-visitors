@@ -104,7 +104,7 @@ const getTodayVisitors = (getDate) => {
                                                     createElement('td', { innerText: `${doc.data().visitHost}` }),
                                                     createElement('td', { innerText: `${doc.data().visitMaxTime}` }),
                                                     createElement('td', { innerText: `${doc.data().visitComments}` })] })] }),
-                                    createElement('button', { className: 'setTimeBtn green-button', innerText: 'Ingresar Hora de Salida' })] })
+                                    createElement('button', { className: 'setTimeBtn green-button', innerText: 'Registrar Salida' })] })
                 ] });
 
             contentDiv.innerHTML += todayVisitorDiv.outerHTML;
@@ -143,6 +143,14 @@ const getTodayVisitors = (getDate) => {
     });
 };
 
+const getCoworkersCollection = () => {
+    db.collection("coworkersLog").get().then(function(querySnapshot) {
+        const coworkerSelect = document.querySelector('.visitHost');
+        querySnapshot.forEach(function(doc) {
+            coworkerSelect.innerHTML += `<option value=${doc.data().coworkerEmail}>${doc.data().coworkerName}</option>`;
+        });
+    });  
+};
 
 // const setExitTime = () => {
 //     db.collection("visitorsLog").where("date", `==`, `${getDate()}`)

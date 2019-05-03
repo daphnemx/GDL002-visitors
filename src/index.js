@@ -14,6 +14,7 @@ if (location.hash === '') {
 
 //	//// VISITORS SCREEN //// //
 else if (location.hash === '#visitors') {
+	getCoworkersCollection();
 	contentDiv.innerHTML = mainHeader().outerHTML + visitorsLogView().outerHTML;
 	loadPhotoAndRegistryBtn();
 }

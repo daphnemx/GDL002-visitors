@@ -13,9 +13,7 @@ const visitorsLogView = () => {
 					createElement('div', { className: 'left-select', children: [
 						createElement('label', { innerText: '¿Quién es tu anfitrión?' }),
 						createElement('select', { className: 'visitHost', children:[
-							createElement('option', { value: '', innerText: 'Elige:' }),
-							createElement('option', { value: 'patriciaga@protonmail.com', innerText: 'Patricia Garfias' }),
-							createElement('option', { value: 'stuff@claudiagarfias.works', innerText: 'Otro Coworker' })] })] }),
+							createElement('option', { value: '', innerText: 'Elige:' })] })] }),
 					createElement('div', { children: [
 						createElement('label', { innerText: 'Tiempo de Visita Máx:' }),
 						createElement('select', { className: 'visitMaxTime', children:[
@@ -30,6 +28,8 @@ const visitorsLogView = () => {
 		});
 	return form;
 };
+
+
 
 const loadPhotoDiv = createElement('div', { 
 	className: 'load-photo-div',
