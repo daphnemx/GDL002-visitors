@@ -28,8 +28,7 @@ a{
 	background-color: black;
 	height: 4rem;
 	padding: .65rem;
-/*	position: fixed;
-*/	width: 100%;
+	width: 100%;
 	margin-bottom: 3rem;
 	display: flex;
 	justify-content: flex-start;
@@ -338,11 +337,14 @@ tbody {
 
 @media only screen and (max-width: 900px) {
 	.main-section {
-		  background: url('https://claudiagarfias.works/contents/uploads/media/architectural-design-architecture-buildings-936722.jpg') no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+		background: url('https://claudiagarfias.works/contents/uploads/media/architectural-design-architecture-buildings-936722.jpg') no-repeat center center fixed; 
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+	}
+	.admin-nav {
+		display: none;
 	}
 }
 
@@ -360,6 +362,10 @@ tbody {
 	}
 
 	.background-vid {
+		display: none;
+	}
+
+	.admin-nav {
 		display: none;
 	}
 }
