@@ -23,7 +23,6 @@ const coworkersLogView = () => {
 
 const getCoworkerRegistry = () => {
 	// contentDivAddCoworking.innetHTML += registerCoworkerBtn;
-
 	coworkerRegistry = { date: getDate(),
 			time: getTime(),
 			coworkerComments : document.querySelector('.coworkerComments').value,
